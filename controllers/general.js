@@ -70,7 +70,7 @@ export const createUser = async (req, res) => {
     const user = await User.create({name, email, phoneNumber, userId, activities, workingHours, role, projects, team, timeTrackingStatus, position, user_id});
     res.status(200).json(user);
   } catch (error) {
-    res.status(4004).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 
