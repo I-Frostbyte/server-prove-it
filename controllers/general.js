@@ -66,8 +66,8 @@ export const createUser = async (req, res) => {
   }
 
   try {
-    // const user_id = req.user_id
-    const user = await User.create({name, email, phoneNumber, userId, activities, workingHours, role, projects, team, timeTrackingStatus, position});
+    const user_id = req.user_id
+    const user = await User.create({name, email, phoneNumber, userId, activities, workingHours, role, projects, team, timeTrackingStatus, position, user_id});
     res.status(200).json(user);
   } catch (error) {
     res.status(404).json({ message: error.message });
